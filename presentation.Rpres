@@ -1,0 +1,43 @@
+Natural Disasters Impact on Human Lives and the Economy in the United States
+========================================================
+author: 
+date: 
+transition: rotate
+transition-speed: slow
+font-family: 'Helvetica'
+First Slide
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+
+Slide With Code
+========================================================
+<small style="font-size:.7em">
+Maximum total property damge (tprop) is due to a devastating flood from heavy rain in Napa county of North california, happened in 2006, casuing $115B damage.
+</small>
+<small style="font-size:.5em">
+```{r}
+mydata <- readRDS("cleandata.rds")
+summary(mydata[,5:6])
+summary(mydata[,7:8])
+```
+</small>
+
+Slide With Plot
+========================================================
+left:50%
+```{r, echo=FALSE}
+library(ggplot2)
+par(mfrow=c(2,1))
+qplot(mydata$YEAR, mydata$tcrop, mydata)
+```
+***
+```{r, echo=FALSE}
+qplot(mydata$YEAR, mydata$tprop, mydata)
+```
